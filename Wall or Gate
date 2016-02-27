@@ -52,3 +52,19 @@ public class Solution {
     
     
 }
+
+When we do the DFS, there are two kinds of room that we should not visit them. 
+-1: let's go
+smaller than current level: we have visited it or it is zero
+So we don't need to use another data structure to record visited rooom.
+
+public void BFS(int[][] rooms, int i, int j, int level){
+        if(i<0||j<0||i>=rooms.length||j>=rooms[0].length) return;
+        if(rooms[i][j]<level) return;//include -1,and already visited room
+        rooms[i][j]=level;
+        BFS(rooms,i+1,j,level+1);
+        BFS(rooms,i-1,j,level+1);
+        BFS(rooms,i,j+1,level+1);
+        BFS(rooms,i,j-1,level+1);
+        
+}
