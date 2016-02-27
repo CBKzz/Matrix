@@ -18,7 +18,7 @@ After running your function, the 2D grid should be:
   
   
   My code:(I think it's right..but not good, because I get time limit exceed)
-  
+  Actually,no. I made a huge mistake....this is DFS!!!!
 public class Solution {
     Set<String> visited =new HashSet<>();
     public void wallsAndGates(int[][] rooms) {
